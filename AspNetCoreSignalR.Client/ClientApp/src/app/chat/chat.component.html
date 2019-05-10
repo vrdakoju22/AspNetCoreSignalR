@@ -1,0 +1,14 @@
+<h1>Name: {{ model.name }}</h1>
+
+<h3>Messages</h3>
+
+<div #messages></div>
+
+<h3>Message</h3>
+
+<form class="uk-form uk-flex uk-child-width-1-1" novalidate #form="ngForm" (ngSubmit)="submit()">
+    <div class="uk-form-controls">
+        <textarea class="uk-textarea" rows="2" required name="message" [(ngModel)]="model.message"></textarea>
+        <button type="submit" class="uk-button uk-button-primary" [disabled]="!form.valid">Send</button>
+    </div>
+</form>
